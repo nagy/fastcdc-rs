@@ -450,6 +450,14 @@ pub struct ChunkData {
     pub data: Vec<u8>,
 }
 
+impl std::ops::Deref for ChunkData {
+    type Target = Vec<u8>;
+
+    fn deref(&self) -> &Self::Target {
+        &self.data
+    }
+}
+
 ///
 /// The FastCDC chunker implementation from 2016 with streaming support.
 ///
